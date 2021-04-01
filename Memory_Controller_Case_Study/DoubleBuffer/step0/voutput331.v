@@ -1,6 +1,6 @@
 module aqed_mod_test(
   input  [15:0] data_in, data_out_in,
-  input         signal_accvalid, signal_accready, signal_hostvalid, signal_hostready,
+  input         signal_accvalid, signal_accready, signal_hostvalid,
   input         full, clk_en, clk, reset, exec_dup,
   output [15:0] data_out,
   output        qed_done, qed_check);
@@ -103,11 +103,11 @@ module aqed_mod_test(
       dup_out_reg <= _T_10;	// output331:119:9
       dup_done_reg <= _T_9;	// output331:120:9
     end
-    if (clk_en & signal_accvalid & signal_hostready & _T_3 == _T) begin	// output331:111:13, :113:13, :122:7
+    if (clk_en & signal_accvalid & _T_3 == _T) begin	// output331:111:13, :113:13, :122:7
       orig_out_reg <= data_out_in;	// output331:123:9
       out_count_reg <= _T_3 + _T_12;	// output331:124:15, :125:9
     end
-    if (clk_en & signal_accvalid & signal_hostready & _T_3 == _T_1) begin	// output331:112:13, :114:13, :127:7
+    if (clk_en & signal_accvalid & _T_3 == _T_1) begin	// output331:112:13, :114:13, :127:7
       dup_out_reg <= data_out_in;	// output331:128:9
       out_count_reg <= _T_3 + _T_12;	// output331:129:15, :130:9
       dup_done_reg <= _T_8;	// output331:131:9
