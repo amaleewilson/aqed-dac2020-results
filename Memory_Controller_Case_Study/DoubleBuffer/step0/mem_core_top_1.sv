@@ -137,8 +137,8 @@ memory_core DUT(
 
 // aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(wen_in), .acc_out_rdy_rsc_dat(valid_out), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in_1), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
 aqed_mod_test aq(.clk(clk), .clk_en_signal(clk_en), .reset(reset), .data_in(data_in), 
-.signal_hostvalid(wen_in), .data_out_in(data_out_in), .signal_accvalid(wen_in), 
-.flush_signal(valid_out), .data_out(data_out), 
+.signal_hostvalid(wen_in), .data_out_in(data_out_in), .signal_accready(wen_in), 
+.signal_accvalid(valid_out), .data_out(data_out), 
 .qed_done(qed_done), .qed_check(qed_check));
 
 
